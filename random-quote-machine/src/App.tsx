@@ -16,13 +16,29 @@ function App() {
   const [quote, setQuote] = useState<Quote>(getRandomQuote())
 
   return (
-    <div>
+    <div className="background">
       <div id="quote-box">
         <div className="quote-content">
           <FaQuoteLeft size="30" style={{ marginRight: '10px' }} />
           <h2 id="text">{quote.quote}</h2>
           <FaQuoteRight size="30" style={{ marginLeft: '10px' }} />
           <h4 id="author">-{quote.author}</h4>
+        </div>
+        <div className="buttons">
+          <a
+            className="button"
+            id="tweet-quote"
+            title="Tweet this Quote!"
+            target="_top"
+            style={{
+              backgroundColor: '#1DA1F2',
+              marginRight: '10px'
+            }}
+            href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.quote}`}
+          >
+            <FaTwitter color='white'/>
+          </a>
+          <a></a>
         </div>
       </div>
     </div>
