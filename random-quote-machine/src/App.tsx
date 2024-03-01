@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import quotes from "./assets/quotes.json"
 import './App.css'
 
 interface Quote{
@@ -7,7 +8,7 @@ interface Quote{
 }
 
 const getRandomQuote = () : Quote => {
-  return quotes
+  return quotes[Math.floor(Math.random()*quotes.length)]
 }
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <>
-      
+      {quote.quote}
     </>
   )
 }
